@@ -1,0 +1,10 @@
+[{
+  "id": "1",
+  "question": "1. A book costs $12.00 at a Shannons bookstore and the store is offering a 30% discount on the price of the book. The same book is $10.00 at Rorys Bookstore, and the store is offering a 15% discount on the price of the book. How much more does the book cost at Rorys Bookstore than Shannons Bookstore after the discount is taken at both stores?",
+  "answer_a": "$0.10",
+  "answer_b": "$2.10",
+  "answer_c": "$3.60",
+  "answer_d": "$4.10",
+  "answer_e": "$5.10",
+  "correct_answer": "A"
+}, {"id": "2", "question": "2. Gabi biked between 20 and 28 miles at an average speed of 16 miles per hour. The amount of time, in minutes, that Gabi biked must have been between", "answer_a": "75 and 105", "answer_b": "60 and 75", "answer_c": "50 and 60", "answer_d": "40 and 50", "answer_e": "25 and 40", "correct_answer": "A"}, {"id": "3", "question": "3. A large square has a perimeter of 720 centimeters. If 36 identical small squares are used to make up the  larger square, what is the side length of one small square?", "answer_a": "2 centimeters", "answer_b": "5 centimeters", "answer_c": "10 centimeters", "answer_d": "20 centimeters", "answer_e": "30 centimeters", "correct_answer": "E"}, {"id": "4", "question": "4. If 60% of W is 20, what is 120% of 2W?", "answer_a": "40", "answer_b": "60", "answer_c": "80", "answer_d": "100", "answer_e": "120", "correct_answer": "C"}, {"id": "5", "question": "5. If m < 0, then 7 - 5m could be", "answer_a": "12", "answer_b": "7", "answer_c": "2", "answer_d": "-3", "answer_e": "-8", "correct_answer": "A"}, {"id": "6", "question": "6. Tzuening and Gloria are buying cupcakes for their class. A dozen cupcakes cost $19.5, a half dozen cupcakes cost $10, and individual cupcakes cost $1.75 each. If the girls need to buy 43 cupcakes, what is the least amount of money they can spend?", "answer_a": "$58.50", "answer_b": "$65.00", "answer_c": "$70.25", "answer_d": "$73.25", "answer_e": "$75.25", "correct_answer": "C"}]

@@ -30,7 +30,7 @@ export default function NewEditExercise(props) {
       .catch((error) => {
         console.log(error);
       })
-  }, [])
+  }, [props.match.params.id])
 
   const onChangeUsername = e => {
     setUsername(e.target.value)

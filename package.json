@@ -10,10 +10,15 @@
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-compound-timer": "^1.2.0",
     "react-datepicker": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-spring": "^8.0.27",
+    "resize-observer-polyfill": "^1.5.1",
+    "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
