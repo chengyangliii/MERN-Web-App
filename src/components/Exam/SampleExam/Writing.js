@@ -55,8 +55,6 @@ export default function Writing() {
                 />
                 <br></br>
                 <h4>Section 1:</h4>
-                <h4></h4>
-                <br></br>
                 <span className='align-middle'>You have 25 minutes to complete a brief writing sample. This writing exercise will not be scored, but
                 used by admission officers to assess your writing skills.</span>
                 <br></br>
