@@ -2,7 +2,6 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 
-import Navbar from "./components/navbar.component"
 import ExercisesList from "./components/exercises-list.component"
 import EditExercise from "./components/edit-exercise.component"
 import CreateExercise from "./components/create-exercise.component"
@@ -16,11 +15,13 @@ import Math_2 from "./components/Exam/SampleExam/Math_2";
 import Verbal from "./components/Exam/SampleExam/Verbal";
 import Reading from "./components/Exam/SampleExam/Reading";
 import AddExam from "./components/Exam/AddExam";
-
  
 export default function App() {
+
   return (
     <Router>
+
+    <a href="http://localhost:5000/users/auth/google">Google</a>
       <div>
         <Route path="/" exact component={ExercisesList} />
         <Route path="/edit/:id" component={EditExercise} />
