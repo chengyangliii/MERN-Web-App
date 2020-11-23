@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import ExercisesList from "./components/exercises-list.component"
 import EditExercise from "./components/edit-exercise.component"
 import CreateExercise from "./components/create-exercise.component"
-import CreateUser from "./components/create-user.component"
+import User from "./components/general/User"
 import Home from "./components/general/Home"
 import Writing from "./components/Exam/SampleExam/Writing";
 import Break from "./components/Exam/SampleExam/Break";
@@ -20,13 +20,11 @@ export default function App() {
 
   return (
     <Router>
-
-    <a href="http://localhost:5000/users/auth/google">Google</a>
       <div>
         <Route path="/" exact component={ExercisesList} />
         <Route path="/edit/:id" component={EditExercise} />
         <Route path="/create" component={CreateExercise} />
-        <Route path="/user" component={CreateUser} />
+        <Route path="/user" component={User} />
         <Route path="/home" component={Home} />
         <Route path='/writing' component={Writing}/>
         <Route path='/math_1' component={Math_1}/>

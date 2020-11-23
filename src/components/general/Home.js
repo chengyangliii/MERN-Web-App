@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react'
 import {useHistory} from "react-router-dom"
 import Menu from './Menu'
+import axios from 'axios'
 
 export default function AdminPage() {
 
@@ -13,6 +14,18 @@ export default function AdminPage() {
         history.push('/login');
     }
 
+    const [displayName, setDisplayName] = useState('')
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/users/')
+            .then(res => {
+                console.log(res)
+                setDisplayName(res.data[1].firstName)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [])
 
     return (
         <div>
@@ -22,13 +35,13 @@ export default function AdminPage() {
                 </div>
                 <a href="/" className="btn btn-primary ml-lg-3 bg-light mr-4" onClick={login}>Logout</a>
             </nav>
-
+            
             <div>
                 <div className="row pt-3">
                     <Menu/>
                     <div className="col-9 ml-7">
                         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 className="h2">Welcome, [ Name ]</h1>
+                            <h1 className="h2">Welcome, {displayName}</h1>
                         </div>
 
                         <div className="row mt-4">
