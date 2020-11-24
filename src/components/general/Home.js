@@ -17,10 +17,10 @@ export default function AdminPage() {
     const [displayName, setDisplayName] = useState('')
 
     useEffect(() => {
-        axios.get('http://localhost:5000/users/')
+        axios.get('http://localhost:5000/users')
             .then(res => {
                 console.log(res)
-                setDisplayName(res.data[1].firstName)
+                setDisplayName(res.data[0].displayName)
             })
             .catch((error) => {
                 console.log(error);

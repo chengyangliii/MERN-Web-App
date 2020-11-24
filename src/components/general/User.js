@@ -6,8 +6,11 @@ export default function User() {
     const [displayName, setDisplayName] = useState('')
 
     useEffect(() => {
-        axios.get('http://localhost:5000/users/')
-            .then(res => setDisplayName(res.body.displayName))
+        axios.get('http://localhost:5000/dash')
+            .then(res => {
+                console.log(res)
+                setDisplayName(res.data[0].title)
+            })
             .catch((error) => {
                 console.log(error);
             })
