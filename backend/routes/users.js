@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const User = require('../models/User')
+const Story = require('../models/Story')
 
 // ANCHOR Done
 
@@ -7,10 +8,20 @@ const User = require('../models/User')
  * @describe    Show all users
  * @route       GET /users/
  */
-router.route('/').get((req, res) => {
-    User.find()
-        .then(users => res.json(users))
-        .catch(err => res.status(400).json('Error: ' + err))
+router.get('/', (req, res) => {
+
+    // Story.find({})
+    //     .then(users => res.send(users))
+    //     .catch(err => res.status(400).json('Error: ' + err))
+    
+    res.send(req.user)
+
+    //console.log(typeof(req.user.googleId))
+    //const id = req.body.user.googleId
+    // console.log(req.user._id)
+    // User.findById(req.user._id)
+    //     .then(users => res.send(users))
+    //     .catch(err => res.status(400).json('Error: ' + err))
 })
 
 module.exports = router

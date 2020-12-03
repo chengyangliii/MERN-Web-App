@@ -1,45 +1,24 @@
 const express = require('express')
 const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
-
 const Story = require('../models/Story')
 
-// @desc    Show add page
-// @route   GET /stories/add
-router.get('/add', ensureAuth, (req, res) => {
-  res.render('stories/add')
+// @desc    Get all page
+// @route   GET /stories/
+router.get("/stories", ensureAuth, async (req, res) => {
+  await Story.find()
+    .then(stories => res.json(stories))
+    .catch(err => res.send(err))
 })
 
-// @desc    Process add form
-// @route   POST /stories
-router.post('/', ensureAuth, async (req, res) => {
-  try {
-    req.body.user = req.user.id
-    await Story.create(req.body)
-    res.redirect('/dashboard')
-  } catch (err) {
-    console.error(err)
-    res.render('error/500')
-  }
-})
-
-// @desc    Show all stories
-// @route   GET /stories
-router.get('/', async (req, res) => {
-  //try {
-    Story.find({ status: 'public' })
-      //.populate('user')
-      //.sort({ createdAt: 'desc' })
-      //.lean()
-      .then(stories => res.json(stories))
-
-    // res.render('stories/index', {
-    //   stories,
-    // })
-  // } catch (err) {
-  //   console.error(err)
-  //   res.render('error/500')
-  // }
+// @desc    Post a page
+// @route   POST /stories/
+router.post("/stories", async (req, res) => {
+  req.body.user = req.user.id
+  //console.log(req.body)
+  await Story.create(req.body)
+   .then(res => res.json("Story created"))
+   .catch(err => res.send(err))
 })
 
 // @desc    Show single story
