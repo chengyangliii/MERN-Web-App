@@ -18,8 +18,7 @@ export default function Math_1() {
     const [questionList, setQuestionList] = useState([]);
     let history = useHistory();
 
-
-    console.log("questionList: "+JSON.stringify(questionList))
+    //console.log("questionList: "+JSON.stringify(questionList))
 
     const handleClick = e => {
         setCurrentId(e.target.name);
@@ -74,17 +73,18 @@ export default function Math_1() {
     // }
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/questionList/7`)
+        axios.get(`http://localhost:5000/math1`)
             .then(result => {
                 //console.log("result.data.data.exam: "+JSON.stringify(result.data.data.exam))
-                var temp = result.data.data.exam.replace(/\\/g, '')
-                console.log(temp)
-                temp = JSON.parse(temp)
-                setQuestionList(temp)
+                //var temp = result.data.data.exam.replace(/\\/g, '')
+                console.log(result.data[0].body)
+                //temp = JSON.parse(temp)
+                setQuestionList(result.data[0].body)
             })
+            .catch(err => console.log(err))
         }, [])
 
-    console.log("questionList after: "+questionList)
+    // console.log("questionList after: "+questionList)
 
     return (
         <div>
@@ -107,13 +107,13 @@ export default function Math_1() {
                 <hr></hr>
                 {
                     questionList.map(question => (
-                                    <span key={question.id}>
-                                        <Question question={question.question}/>
-                                        <Answers
-                                            question={question}
-                                            handleClick={handleClick}
-                                        />
-                                    </span>
+                        <span key={question.id}>
+                            <Question question={question.question}/>
+                            <Answers
+                                question={question}
+                                handleClick={handleClick}
+                            />
+                        </span>
                     ))
                 }
                 <Button variant="outline-primary" name="finish" onClick={next}>

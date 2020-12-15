@@ -1,36 +1,47 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react';
+import {useHistory} from "react-router-dom"
+import {a} from 'react-spring'
+import './dashboard.css'
 import Menu from './Menu'
-import axios from 'axios'
 
 export default function AdminPage() {
 
-    //const [displayName, setDisplayName] = useState('')
-    const [user, setUser] = useState([])
+    let history = useHistory();
+    // eslint-disable-next-line no-unused-vars
+    const Writing = () => {
+        history.push('/Writing');
+    }
+    const login = () => {
+        history.push('/login');
+    }
 
-    useEffect(() => {
-        axios.get("http://localhost:5000/user", { withCredentials: true})
-            .then((res) => {
-                setUser(res.data)
-            }
-        )
-    }, [])
 
     return (
         <div>
-            <nav className="navbar border-bottom">
-                <div className="h1 text-dark mb-0">
-                        Futurus EduLabs
-                </div>
-                
-            </nav>
-            
-            <div>
-                <div className="row pt-3">
+            <div className="navbar-container">
+                <nav className="navbar navbar-expand-lg">
+                    <div className="container ml-4">
+                        <a className="h1 text-dark mb-0" href="./">
+                            Futurus EduLabs
+                        </a>
+                    </div>
+                    <a className="btn btn-primary ml-lg-3 bg-light mr-4" onClick={login}>Logout</a>
+                </nav>
+            </div>
+
+           <div>
+                <div className="row">
                     <Menu/>
                     <div className="col-9 ml-7">
                         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 className="h2">Welcome, {user.username}</h1>
+                            <h1 className="h2">Welcome, [ Name ]</h1>
                         </div>
+
+                        <nav aria-label="breadcrumb">
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item"><a className="havecursor" href="admin">Home</a></li>
+                            </ol>
+                        </nav>
 
                         <div className="row mt-4">
                             <div className="col-2">

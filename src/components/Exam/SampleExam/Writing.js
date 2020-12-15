@@ -71,7 +71,7 @@ export default function Writing() {
                 </div>
 
                 <div className="text-right">
-                    <button type="button" onClick={handleSubmit} className="btn btn-primary" on>Submit</button>
+                    <button type="button" onClick={handleSubmit} className="btn btn-primary">Submit</button>
                 </div>
 
                 <br></br>

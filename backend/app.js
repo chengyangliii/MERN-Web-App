@@ -45,6 +45,11 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.static(path.join(__dirname, 'public')))
  
 //----------------------------------------- END OF common middleware---------------------------------------------------
+
+app.use('/reading', require('./routes/reading'))
+app.use('/exam', require('./routes/exam'))
+
+
 //----------------------------------------- BEGIN OF Passport-Local ---------------------------------------------------
 
 const User = require("./models/User_2")
@@ -97,6 +102,8 @@ app.post("/stories", (req, res) => {
    .then(res => res.json("Story created"))
    .catch(err => res.send(err))
 })
+
+
 
 //----------------------------------------- END OF Passport-Local ---------------------------------------------------
 //----------------------------------------- BEGIN OF Passport-Google ---------------------------------------------------
