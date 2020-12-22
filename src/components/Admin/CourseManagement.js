@@ -7,6 +7,8 @@ import {Modal, Button, Form} from "react-bootstrap";
 import Menu from "./Menu";
 import Menu2 from "./Menu2";
 
+
+
 export default function CourseManagement() {
     
 
@@ -15,12 +17,6 @@ export default function CourseManagement() {
     const Writing = () => {
         history.push('/Writing');
     }
-    const login = () => {
-        history.push('/login');
-    }
-    
-    // eslint-disable-next-line no-unused-vars
-    const [count, setCount] = useState(0)
 
     /**
      * Fetch
@@ -28,12 +24,12 @@ export default function CourseManagement() {
     const [courses, setCourses] = useState([])
     useEffect(() => {
         async function getSelect() {
-            const request = await axios.get(`http://localhost:8080/course`)
+            const request = await axios.get(`http://localhost:5000/exam`)
             return request
         }
         getSelect().then(result => {
-            //console.log("result.data.data: "+result.data.data)
-            setCourses(result.data.data)
+            console.log(result.data)
+            setCourses(result.data)
         })
     }, [])
     //console.log("courses: "+courses)
@@ -62,22 +58,22 @@ export default function CourseManagement() {
                 console.log("post result data name: "+result.data.name)
             })
     }
-    const [showPostNewCourseForm, setShowPostNewCourseForm] = useState(false);
-    const handlePostNewCourseFormClose = () => setShowPostNewCourseForm(false);
-    const handlePostNewCourseFormShow = () => setShowPostNewCourseForm(true);
-    const handleNameChange = e => {
-        setPostName(e.target.value)
-    }
-    const handleIdChange = e => {
-        setPostId(e.target.value)
-    }
-    const handleLevelChange = e => {
-        setPostLevel(e.target.value)
-    }
-    const closeFromAndPostNewCourse = e => {
-        handlePost(e);
-        handlePostNewCourseFormClose(e);
-    }
+    // const [showPostNewCourseForm, setShowPostNewCourseForm] = useState(false);
+    // const handlePostNewCourseFormClose = () => setShowPostNewCourseForm(false);
+    // const handlePostNewCourseFormShow = () => setShowPostNewCourseForm(true);
+    // const handleNameChange = e => {
+    //     setPostName(e.target.value)
+    // }
+    // const handleIdChange = e => {
+    //     setPostId(e.target.value)
+    // }
+    // const handleLevelChange = e => {
+    //     setPostLevel(e.target.value)
+    // }
+    // const closeFromAndPostNewCourse = e => {
+    //     handlePost(e);
+    //     handlePostNewCourseFormClose(e);
+    // }
 
     /**
      * Delete
@@ -117,7 +113,6 @@ export default function CourseManagement() {
                             Futurus EduLabs
                         </a>
                     </div>
-                    <a className="btn btn-primary ml-lg-3 bg-light mr-4" onClick={login}>Logout</a>
                 </nav>
             </div>
 
@@ -131,19 +126,15 @@ export default function CourseManagement() {
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Level</th>
-                                <th scope="col">NumberofStudent</th>
-                                <th scope="col">Delete</th>
+                                
                             </tr>
                             </thead>
                             <tbody>
                             {
                                 courses.map(course =>(
                                     <tr key={course.id}>
-                                        <th scope="row">{count+1}</th>
-                                        <td>{course.name}</td>
-                                        <td>{course.level}</td>
-                                        <td>{course.nofs}</td>
+                                        <td>1</td>
+                                        <td>{course.title}</td>
                                         <td><Button variant="danger" value={course.id} onClick={showASubmit}>Remove</Button></td>
                                     </tr>
                                 ))
@@ -151,7 +142,7 @@ export default function CourseManagement() {
                             </tbody>
                         </table>
 
-                        <div>
+                        {/* <div>
                             <Button variant="success" onClick={handlePostNewCourseFormShow}>
                                 PostNewCourseForm Course
                             </Button>
@@ -200,19 +191,10 @@ export default function CourseManagement() {
                                 </Button>
                                 <Button variant="primary" onClick={handleDeleteClose}>Confirm</Button>
                             </Modal.Footer>
-                        </Modal>
-
-
+                        </Modal> */}
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-
-//<button type="button" className="btn btn-danger" value={course.id} onClick={handleDelete}>Remove</button>
-//
-// <Form.Group controlId="">
-//     <Form.Label><h6>Student</h6></Form.Label>
-//     <Form.Control type="text" defaultValue="0"/>
-// </Form.Group>

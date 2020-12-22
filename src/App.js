@@ -11,13 +11,9 @@ import Math_1 from "./components/Exam/SampleExam/Math_1";
 import Math_2 from "./components/Exam/SampleExam/Math_2";
 import Verbal from "./components/Exam/SampleExam/Verbal";
 import Reading from "./components/Exam/SampleExam/Reading";
-import AddExam from "./components/Exam/AddExam";
 import CreateNewExam from './components/Admin/CreateNewExam';
-import Log from './Log';
-import GeneralInfo from './components/CreateExam/GeneralInfo'
-import Quantitative from './components/CreateExam/Quantitative_1';
-import createReading from './components/CreateExam/Reading'; 
-import Quantitative_1 from './components/CreateExam/Quantitative_1';
+import CourseManagement from './components/Admin/CourseManagement';
+import ExamManagement from './components/Admin/ExamManagement';
 
 export default function App() {
 
@@ -36,13 +32,9 @@ export default function App() {
         <Route path='/math_2' component={Math_2}/>
         <Route path='/break' component={Break}/>
         <Route path='/break_2' component={Break_2}/>
-        <Route path='/addnew' component={AddExam}/>
         <Route path='/c' component={CreateNewExam}/>
-        <Route path="/log" component={Log}/>
-        <Route path='/step1' component={GeneralInfo} />
-        <Route path='/quantitative_1' component={Quantitative} />
-        <Route path='/cr' component={createReading} />
-        <Route path='/q' component={Quantitative_1} />
+        <Route path='/exammanagement' component={ExamManagement}/>
+        <Route path='/coursemanagement' component={CourseManagement}/>
       </div>
     </Router>
   );

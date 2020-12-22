@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Menu from './Menu'
+import Menu2 from '../Admin/Menu2'
+
 import axios from 'axios'
 
 export default function AdminPage() {
@@ -27,6 +29,7 @@ export default function AdminPage() {
             <div>
                 <div className="row pt-3">
                     <Menu/>
+                    
                     <div className="col-9 ml-7">
                         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 className="h2">Welcome, {user.username}</h1>
@@ -36,43 +39,15 @@ export default function AdminPage() {
                             <div className="col-2">
                                 <div className="list-group" id="list-tab" role="tablist">
                                     <a className="list-group-item list-group-item-action havecursor" id="list-home-list"
-                                       data-toggle="list" href="coursepage">管理科目</a>
+                                       data-toggle="list" href="coursepage">Manage quiz</a>
                                     <a className="list-group-item list-group-item-action havecursor" id="list-profile-list"
-                                       data-toggle="list" href="evaluationpage">批阅试卷</a>
+                                       data-toggle="list" href="evaluationpage">Review quiz</a>
                                     <a className="list-group-item list-group-item-action havecursor" id="list-messages-list"
-                                       data-toggle="list" href="classpage">管理班级</a>
+                                       data-toggle="list" href="classpage">Manage class</a>
                                     <a className="list-group-item list-group-item-action havecursor" id="list-settings-list"
-                                       data-toggle="list" href="/">我的信息</a>
+                                       data-toggle="list" href="/">Profile</a>
                                 </div>
-                            </div>
-                            <div className="col-2">
-                                <div className="list-group" id="list-tab" role="tablist">
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-home-list"
-                                       data-toggle="list" href="/exampage">管理试卷</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-profile-list"
-                                       data-toggle="list" href="/ExamManagement/Writing">Writing</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-profile-list"
-                                       data-toggle="list" href="/ExamManagement/Math">Math</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-messages-list"
-                                       data-toggle="list" href="/ExamManagement/Reading">Reading</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-settings-list"
-                                       data-toggle="list" href="/ExamManagement/Verbal">Verbal</a>
-                                </div>
-                            </div>
-                            <div className="col-2">
-                                <div className="list-group" id="list-tab" role="tablist">
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-home-list"
-                                       data-toggle="list" href="/evaluationpage">批阅试卷</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-profile-list"
-                                       data-toggle="list" href="/ExamManagement/Writing">Writing</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-profile-list"
-                                       data-toggle="list" href="/ExamManagement/Math">Math</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-messages-list"
-                                       data-toggle="list" href="/ExamManagement/Reading">Reading</a>
-                                    <a className="list-group-item list-group-item-action havecursor" id="list-settings-list"
-                                       data-toggle="list" href="/ExamManagement/Verbal">Verbal</a>
-                                </div>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
